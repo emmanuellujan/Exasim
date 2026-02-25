@@ -41,6 +41,7 @@
 #include "setsysstruct.cpp"
 #include "getpoly.cpp"
 #include "gmres.cpp"
+#include "gmresmpir.cpp"
 #include "ptcsolver.cpp"
 
 // constructor
@@ -61,4 +62,3 @@ CSolver::~CSolver()
 }
 
 #endif        
-

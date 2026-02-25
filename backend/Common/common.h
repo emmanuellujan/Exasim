@@ -1620,7 +1620,7 @@ struct commonstruct {
     Int AVdistfunction=0;
     Int read_uh = 0;
 
-    Int linearSolver;  /* 0: GMRES; 1: CG; etc. */      
+    Int linearSolver;  /* 0: GMRES; 1: GMRES-MPIR; etc. */      
     Int nonlinearSolver;
     Int linearSolverMaxIter;   
     Int linearSolverIter;   // current iteration

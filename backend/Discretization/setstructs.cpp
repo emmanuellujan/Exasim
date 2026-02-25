@@ -162,7 +162,7 @@ void setcommonstruct(commonstruct &common, appstruct &app, masterstruct &master,
     common.ncAV = app.problem[11];    // Flag for artificial viscosity. 0: No artificial viscosity; 1: Homogeneous artificial viscosity (C. Nguyen's formulation); 2: Hypersonic homogeneous artificial viscosity (C. Nguyen's formulation)
                                         //                                3: Isotropic artificial viscosity (D. Moro's formulation). 4: Latest version of the model (taking the best of all previous models)
                                         //                                8: Density smoothness sensor (Per's approach)    
-    common.linearSolver = app.problem[12];  /* 0: GMRES; 1: CG; etc. */      
+    common.linearSolver = app.problem[12];  /* 0: GMRES; 1: GMRES-MPIR; etc. */      
     common.nonlinearSolverMaxIter = app.problem[13];                
     common.linearSolverMaxIter = app.problem[14];        
     common.gmresRestart = app.problem[15];    
