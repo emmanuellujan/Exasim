@@ -68,8 +68,10 @@
 
 #ifdef USE_FLOAT
 typedef float dstype;
+typedef float dstype_low;
 #else
 typedef double dstype; //  double is default precision 
+typedef float dstype_low; // lower precision companion
 #endif
 
 #ifdef USE_LONG
