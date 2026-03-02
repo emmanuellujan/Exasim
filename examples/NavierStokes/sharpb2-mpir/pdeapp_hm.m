@@ -34,7 +34,6 @@ pdehm.tau = 1.0;              % DG stabilization parameter
 pdehm.linearsolver = 1;       % 0 -> GMRES, 1 -> GMRES-MPIR
 pde.GMRESrestart = 250;         %try 50
 pde.GMRESortho = 1;
-pde.linearsolver = 1;         % 0 -> GMRES, 1 -> GMRES-MPIR
 pde.linearsolvertol = 1e-6; % GMRES tolerance
 pde.linearsolveriter = 500; %try 100
 pde.preconditioner = 1;
