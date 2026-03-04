@@ -4,6 +4,7 @@ run(cdir(1:(ii+5)) + "/install/setpath.m");
 
 % initialize pde structure and mesh structure
 [pde,mesh] = initializeexasim();
+pde.metis = cdir(1:(ii+5)) + "/metis/METIS/bin/mpmetis";
 pde.model = "ModelD";  
 pde.modelfile = "pdemodel_axialns";
 
@@ -35,7 +36,7 @@ pde.physicsparam = [gam Re Pr Minf rinf ruinf rvinf rEinf Tinf Tref Twall];
 pde.tau = 4.0;                  % DG stabilization parameter
 pde.GMRESrestart = 250;         %try 50
 pde.GMRESortho = 1;
-pde.linearsolver = 1;    % 0 -> GMRES, 1 -> GMRES-MPIR
+pde.linearsolver = 0;    % 0 -> GMRES, 1 -> GMRES-MPIR
 pde.linearsolvertol = 1e-6; % GMRES tolerance
 pde.linearsolveriter = 500; %try 100
 pde.preconditioner = 1;
@@ -73,7 +74,7 @@ mesh.udg = UDG;
 
 figure(3); clf; scaplot(mesh,TnearWall,[],1); axis on; axis equal; axis tight;
 
-pde.gencode = 0;
+pde.gencode = 1;
 [sol,pde,mesh,master,dmd] = exasim(pde,mesh);
 figure(1); clf; scaplot(mesh, eulereval(sol, 'M',gam,Minf),[0 Minf],1); colorbar;
 
